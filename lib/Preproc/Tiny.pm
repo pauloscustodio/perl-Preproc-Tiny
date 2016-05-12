@@ -5,7 +5,7 @@
 
 package Preproc::Tiny;
 
-use 5.022001;
+use 5.010;
 use strict;
 use warnings;
 use File::Basename;

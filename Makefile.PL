@@ -1,4 +1,4 @@
-use 5.022001;
+use 5.010;
 use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Preproc::Tiny',
