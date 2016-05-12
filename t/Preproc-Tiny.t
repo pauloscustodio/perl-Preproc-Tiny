@@ -179,11 +179,15 @@ write_input(<<'IN');
 IN
 
 
-my($stderr, $result) = capture_stderr { system $^X, 'blib/bin/pp.pl', $in_files[0] };
+my($stderr, $result) = capture_stderr { system $^X, 'blib/bin/pp.pl' };
+ok $result != 0;
+like $stderr, qr/Usage: pp\.pl file\.pp\.\.\./;
+
+($stderr, $result) = capture_stderr { system $^X, 'blib/bin/pp.pl', $in_files[0] };
 ok $result != 0;
 like $stderr, qr/Can't modify constant item in scalar assignment at test.1.c.pl line/;
 like $stderr, qr/$in_files[0]: parse error/;
-diag $result;
+
 
 unlink @in_files, @out_files, @pl_files;
 done_testing;
