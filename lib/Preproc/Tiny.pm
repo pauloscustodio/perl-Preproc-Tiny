@@ -289,7 +289,7 @@ The file main.c.pl is kept for investigating the error.
 
 =head1 SEE ALSO
 
-Template toolkit from CPAN as a full-fledged templating system.
+L<Template> toolkit from CPAN as a full-fledged templating system.
 
 =head1 AUTHOR
 
