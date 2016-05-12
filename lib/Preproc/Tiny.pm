@@ -14,7 +14,7 @@ require Exporter;
 
 our @ISA = qw( Exporter );
 our @EXPORT = qw( pp );
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 #------------------------------------------------------------------------------
 # Code borrowed from Data::Dump
