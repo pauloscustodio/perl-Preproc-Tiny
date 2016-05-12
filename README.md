@@ -21,7 +21,7 @@ To install this module type the following:
 
 # Dependencies
 
-None.
+None non-core for running. There are dependendencies for running the tests.
 
 # Copyright and Licence
 
