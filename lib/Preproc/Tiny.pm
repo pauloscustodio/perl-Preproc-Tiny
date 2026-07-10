@@ -122,7 +122,7 @@ sub pp_text {
 
 	# run code
 	my $output = eval($pl);
-	$@ and die "parse error: $@\n$pl\n";
+	$@ and die "perl code:\n$pl\nparse error: $@\n";
 
 	return $output;
 }
@@ -284,7 +284,7 @@ for each input and generates the corresponding output file.
 
 =item pp_text
 
-Work horse of pp_files; receives the inptiu string with template text
+Work horse of pp_files; receives the input string with template text
 and returns the output text after running the preprocessor.
 
 =back
