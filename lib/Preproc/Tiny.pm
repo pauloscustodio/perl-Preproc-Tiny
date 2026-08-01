@@ -101,7 +101,7 @@ sub pp_text {
 	local $_ = $input;
 	while (! at_end($_) ) {
 		if (/\G (?| ^ \@\@ (.*) \n? 
-				  |   \@\@ (.*) 
+				    |   \@\@ (.*) 
 				) /gcxim) {
 			$pl .= $1."\n";
 		}
@@ -111,7 +111,13 @@ sub pp_text {
 		elsif (/\G \[\@  \s* (.*?)  (?: -\@\] \s* | \@\] ) /gcxis) {
 			$pl .= $1.";\n";
 		}
-		elsif (/ ( [^\[\@]+ ) /gcxi) {
+		elsif (/\G ( [^\[\@]+ ) /gcxim) {
+			$pl .= '$OUT .= '.quote($1).";\n";
+		}
+		elsif (/\G (\@) /gcxim) {
+			$pl .= '$OUT .= '.quote($1).";\n";
+		}
+		elsif (/\G (\[) /gcxim) {
 			$pl .= '$OUT .= '.quote($1).";\n";
 		}
 		else {
