@@ -1,3 +1,5 @@
+#!/usr/bin/env perl
+
 #------------------------------------------------------------------------------
 # Preproc::Tiny - Minimal stand-alone preprocessor for code generation using perl
 # Copyright (C) 2016-2026 by Paulo Custodio
