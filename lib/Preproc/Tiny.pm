@@ -142,9 +142,9 @@ sub at_end {
 #------------------------------------------------------------------------------
 # Run if called as a script
 #------------------------------------------------------------------------------
-unless (caller) {
-	@ARGV or die "Usage: ",basename($0)," file.pp...\n";
-	pp(@ARGV);
+sub main {
+    @ARGV or die "Usage: pp file.pp...\n";
+    pp(@ARGV);
 }
 
 1;
@@ -162,7 +162,7 @@ Preproc::Tiny - Minimal stand-alone preprocessor for code generation using perl
    my $result = pp_text($input);
    
    # in the shell
-   $ pp.pl main.c.pp
+   $ pp main.c.pp
 
 =head1 DESCRIPTION
 
@@ -171,13 +171,12 @@ in a flexible way and without having to adapt to limitations of
 the several mini-languages of other templating engines available
 in CPAN. The template language used is just perl.
 
-Being a Tiny module, it has no external dependencies and can be
-used by just copying the pp.pl file to any executable directory.
+Being a Tiny module, it has no external dependencies.
 
 The input file has to have a .pp extension. The .pp is removed to generate 
 the output file, e.g.
 
-   $ pp.pl main.c.pp   # parses main.c.pp and generates main.c
+   $ pp main.c.pp   # parses main.c.pp and generates main.c
 
 Inside the input file, the default action is to copy plain text to the 
 output file, e.g.

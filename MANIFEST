@@ -1,5 +1,6 @@
 Changes
 lib/Preproc/Tiny.pm
+bin/pp
 LICENSE
 Makefile.PL
 MANIFEST
