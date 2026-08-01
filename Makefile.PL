@@ -3,6 +3,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Preproc::Tiny',
     VERSION_FROM      => 'lib/Preproc/Tiny.pm', 
+	EXE_FILES         => ['pp.pl'],
     PREREQ_PM         => {}, 
 	BUILD_REQUIRES    => {
 		'Test::More'		=> 0,
@@ -29,13 +30,12 @@ WriteMakefile(
 );
 
 sub MY::postamble {
-	return q{
+    return q{
+pp.pl : lib/Preproc/Tiny.pm
+	$(NOECHO) $(CP) lib/Preproc/Tiny.pm pp.pl
+	$(NOECHO) $(CHMOD) 755 pp.pl
 
-pure_all :: $(INST_BIN)$(DFSEP)pp.pl
-
-$(INST_BIN)$(DFSEP)pp.pl : \
-				lib$(DFSEP)Preproc$(DFSEP)Tiny.pm \
-				$(FIRST_MAKEFILE)
-	$(PERLRUNINST) -MExtUtils::Command -e cp lib$(DFSEP)Preproc$(DFSEP)Tiny.pm $(INST_BIN)$(DFSEP)pp.pl
+clean ::
+	$(RM_F) pp.pl
 };
 }

@@ -12,7 +12,7 @@ my $output = "t/input/$self.pl";
 my $expected = "t/expected/$self.pl";
 
 unlink "$output";
-is 0, system("$^X blib/bin/pp.pl $input"), "run pp.pl $input";
+is 0, system("$^X blib/script/pp.pl $input"), "run pp.pl $input";
 ok -f "$output", "$output created";
 is 0, system("diff $expected $output"), "run diff $expected $output";
 unlink "$output";
