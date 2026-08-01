@@ -39,10 +39,5 @@ WriteMakefile(
                   'https://github.com/pauloscustodio/perl-Preproc-Tiny/issues',
             },
         },
-        provides => {
-            'Preproc::Tiny' => {
-                file => 'lib/Preproc/Tiny.pm',
-            },
-        },
     },
 );

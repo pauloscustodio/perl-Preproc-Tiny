@@ -1,5 +1,3 @@
-#!/usr/bin/env perl
-
 #------------------------------------------------------------------------------
 # Preproc::Tiny - Minimal stand-alone preprocessor for code generation using perl
 # Copyright (C) 2016-2026 by Paulo Custodio
@@ -16,7 +14,7 @@ require Exporter;
 
 our @ISA = qw( Exporter );
 our @EXPORT = qw( pp pp_files pp_text );
-our $VERSION = '0.05';
+our $VERSION = '0.09';
 
 #------------------------------------------------------------------------------
 # Code borrowed from Data::Dump
