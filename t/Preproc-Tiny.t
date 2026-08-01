@@ -27,7 +27,7 @@ sub check_output {
 	my($out) = @_;
 	for (@out_files) {
 		ok -f $_;
-		eq_or_diff path($_)->slurp, $out;
+		eq_or_diff $out, path($_)->slurp;
 	}
 }
 
@@ -63,7 +63,7 @@ sub test {
 	
 	# test filter
 	my $result = pp_text($in);
-	eq_or_diff $result, $out;
+	eq_or_diff $out, $result;
 }
 
 test(<<'IN', <<'OUT');
