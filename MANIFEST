@@ -6,10 +6,4 @@ Makefile.PL
 MANIFEST
 MANIFEST.SKIP
 README.md
-t/expected/test_at.pl
-t/expected/test_square.pl
-t/input/test_at.pl.pp
-t/input/test_square.pl.pp
 t/Preproc-Tiny.t
-t/test_at.t
-t/test_square.t
